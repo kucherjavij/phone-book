@@ -19,6 +19,11 @@ extraReducers:{
     state.user = payload.user;
     state.token = payload.token;
     state.isLoggedIn = true;
+    },
+[operations.logOut.fulfilled](state,_){
+    state.user = { name: null, email: null };
+    state.token = null;
+    state.isLoggedIn = false;
 }
 }
 })

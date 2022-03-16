@@ -10,8 +10,9 @@ const isLoggedIn = useSelector(authSelectors.getIsLoggedIn)
 return <div>
     <nav  style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
 <Navigation/>
-{isLoggedIn ? <UserMenu/> : <AuthNav/>}
-
+{/* {isLoggedIn ? <UserMenu/> : <AuthNav/>} */}
+        <UserMenu />
+        <AuthNav/>
 </nav>
 </div> 
 }
