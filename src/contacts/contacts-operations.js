@@ -6,7 +6,6 @@ import {
     // fetchContactRequest, fetchContactSuccess, fetchContactRejected
 } from "./contacts-actions";
 import {fetchContact, addContacts} from './contact-API'
-axios.defaults.baseURL = 'https://6201629bfdf50900172499d7.mockapi.io/contacts';
 
 
 
