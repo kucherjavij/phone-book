@@ -1,6 +1,5 @@
 import axios from "axios"
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com'
 
 export async function fetchContact() {
   const { data } = await axios.get(`/contacts`);
@@ -8,16 +7,16 @@ export async function fetchContact() {
   return data;
 }
 
-export async function addContacts(name, phone) {
+export async function addContacts(name, number) {
   const { data } = await axios.post(`/contacts`, {
     name,
-    phone,
+    number,
   });
   return data;
 }
 
-export async function deleteContact(id) {
-  const { data } = await axios.delete(`/contacts/${id}`);
+export async function deleteContact(contactId) {
+  const { data } = await axios.delete(`/contacts/${contactId}`);
   return data;
 }
 export default {fetchContact,addContacts,deleteContact}

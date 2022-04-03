@@ -17,8 +17,8 @@ console.log(onRender);
      return  (<div>
       <h2>Contacts</h2>
       <ul>
-     {onRender.map(({name, phone, id}) => (<ContactListItem key={id}>
-       {name} : {phone} 
+     {onRender.map(({name, number, id}) => (<ContactListItem key={id}>
+       {name} : {number} 
        <DeleteBtn
            type='button'
            onClick={() => dispatch(contactsOperations.deleteContact(id))}>Delete
