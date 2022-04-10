@@ -24,6 +24,10 @@ extraReducers:{
     state.user = { name: null, email: null };
     state.token = null;
     state.isLoggedIn = false;
+    },
+[operations.fetchCurrentUser.fulfilled](state,{payload}){
+    state.user = payload;
+    state.isLoggedIn = true;
 }
 }
 })
