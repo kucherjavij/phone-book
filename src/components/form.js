@@ -5,7 +5,7 @@ import {DeleteBtn } from "./contactList.styled"
 import { useDispatch, useSelector } from "react-redux";
 import contactOperations from "../contacts/contacts-operations"
 import { getContacts } from "../contacts/contacts-selectors";
-
+import s from "./appbar.module.css"
 
 export default function Form (){
    const [name, setName] = useState('');
@@ -71,7 +71,7 @@ export default function Form (){
       required
     /></label>
     <br/>
-    <DeleteBtn type="submit" >Add contact</DeleteBtn>
+    <button className={s.button} type="submit" >Add contact</button>
     </form>
         )}
 

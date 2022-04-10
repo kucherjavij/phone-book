@@ -1,5 +1,6 @@
+
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import operations from "./auth/authOperations";
 import AppBar from "./components/appBar";
@@ -9,15 +10,18 @@ import LoginView from "./pages/loginView";
 import PrivateRoute from "./pages/PrivateRoute";
 import PublicRoute from "./pages/PublicRoute";
 import RegisterView from "./pages/registerView";
-
+import authSelectors from "./auth/authSelectors";
+import s from "./App.module.css"
 function App() {  
   const dispatch = useDispatch()
+  const isFetchingCurrentUser  = useSelector(authSelectors.getRefreshing)
 
 useEffect(() => {
   dispatch(operations.fetchCurrentUser())
 }, [dispatch]);
 
-    return (<div>
+  return (
+      !isFetchingCurrentUser  &&(<div className={s.div}>
       <AppBar/>
       <hr/>
 <Routes>
@@ -45,7 +49,8 @@ useEffect(() => {
 
 </Routes>
 </div>
-  );
+  ));
+    
 }
 
 export default App;  

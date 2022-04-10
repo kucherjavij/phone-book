@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px;
+  color: #2a363b;
+  font-size: 18px;
+}
+.button {
+  margin: 10px 0 20px 10px;
+  background-color: #471f2d;
+  border: none;
+  color: white;
+  padding: 9px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.usermenu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: baseline;
+}

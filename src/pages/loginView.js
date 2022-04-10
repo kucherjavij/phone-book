@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import operations from '../auth/authOperations';
+import s from './registerView.module.css'
 export default function LoginView() {
     const dispatch = useDispatch()
     const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ export default function LoginView() {
     
 
     return (
-<form onSubmit={handleSubmit} autoComplete="on">
+<form onSubmit={handleSubmit} autoComplete="on" className={s.form}>
         <label>
           Email
           <input
@@ -38,6 +39,7 @@ export default function LoginView() {
             name="email"
             value={email}
             onChange={handleChange}
+            className={s.input}
           />
         </label>
         <label>
@@ -47,9 +49,10 @@ export default function LoginView() {
             name="password"
             value={password}
             onChange={handleChange}
+            className={s.input}
           />
         </label>
-        <button type='submit'>Log In</button>
+        <button className={s.button} type='submit'>Log In</button>
         </form>
     )
 }

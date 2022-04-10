@@ -1,5 +1,5 @@
 export default function homePage() {
     return <div>
-        <p>main page</p>
+        <h1>Welcome to your phone book =)</h1>
     </div>
 }

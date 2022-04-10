@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import {  useDispatch, useSelector } from "react-redux";
-import { DeleteBtn, ContactListItem } from "./contactList.styled"
 import contactsOperations from "../contacts/contacts-operations"
 import { filterContacts } from "../contacts/contacts-selectors"
 import { useEffect } from "react";
+import s from './contactList.module.css'
 
 export default function ContactList() {
     const onRender = useSelector(filterContacts)
@@ -17,13 +17,15 @@ console.log(onRender);
      return  (<div>
       <h2>Contacts</h2>
       <ul>
-     {onRender.map(({name, number, id}) => (<ContactListItem key={id}>
+     {onRender.map(({name, number, id}) => (<li className={s.li} key={id}>
        {name} : {number} 
-       <DeleteBtn
+       <button
            type='button'
-           onClick={() => dispatch(contactsOperations.deleteContact(id))}>Delete
-       </DeleteBtn>
-     </ContactListItem>))}
+         onClick={() => dispatch(contactsOperations.deleteContact(id))}
+        className={s.button}
+       >Delete
+       </button>
+     </li>))}
    </ul></div>)
   
 }
